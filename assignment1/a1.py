@@ -1,3 +1,5 @@
+#815257
+
 fruit_calorie = {
     'apple': 130,
     'avocado' : 50,
@@ -23,8 +25,20 @@ fruit_calorie = {
 
 def get_calories(fruit):
     if fruit in fruit_calorie:
-        print(str(fruit_calorie[fruit])+" calories")
-    
+        return str(fruit_calorie[fruit])
 
-fruit = input().lower().strip()
-get_calories(fruit)
+def main():
+    print("This program outputs calories of a portion of the entered fruit.")
+    print("Enter a FRUIT to continue.")
+    print("Enter a EXIT to exit the program.")
+    while True:
+        fruit = input("Fruit: ").lower().strip()
+        if fruit == "exit":
+            break
+        calories = get_calories(fruit)
+        if calories:
+            print("Calories: "+calories)
+        else:
+            print("Invalid Fruit")
+
+main()
